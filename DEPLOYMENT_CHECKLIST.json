@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-08-17T15:12:12.291383",
+  "frontend_checklist": {
+    "repository_pushed": false,
+    "vercel_account_created": false,
+    "github_connected_to_vercel": false,
+    "environment_variables_set": {
+      "VITE_API_BASE": "https://job-tracker-api.onrender.com/api"
+    },
+    "deployment_successful": false,
+    "production_url_tested": false
+  },
+  "backend_checklist": {
+    "repository_pushed": false,
+    "render_account_created": false,
+    "postgresql_database_created": false,
+    "environment_variables_set": {
+      "DATABASE_URL": "postgresql://...",
+      "SECRET_KEY": "<generated-secret-below>",
+      "CORS_ORIGINS": "https://yourfrontend.vercel.app",
+      "ENVIRONMENT": "production"
+    },
+    "deployment_successful": false,
+    "health_endpoint_tested": false
+  },
+  "database_checklist": {
+    "postgresql_created_on_render": false,
+    "database_url_saved": false,
+    "tables_created": false,
+    "backups_enabled": false
+  },
+  "security_checklist": {
+    "secret_key_is_random": false,
+    "database_password_is_strong": false,
+    "cors_origins_correct": false,
+    "https_enabled": false,
+    "environment_is_production": false
+  }
+}

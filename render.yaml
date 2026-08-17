@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: job-tracker-api
+    env: python
+    region: oregon
+    plan: starter
+    
+    buildCommand: bash build.sh
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.0
+      - key: ENVIRONMENT
+        value: production
+      - key: CORS_ORIGINS
+        value: https://job-tracker.vercel.app,https://yourdomain.com
+    
+    autoDeploy: true
+    
+  - type: pserv
+    name: job-tracker-db
+    env: postgres
+    plan: free
+    region: oregon
+    
+    database:
+      name: job_tracker
+      user: postgres
+      
+    autoDeploy: false

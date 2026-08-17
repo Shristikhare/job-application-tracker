@@ -1,0 +1,71 @@
+job-application-tracker/
+│
+├── 📄 Root Documentation
+│   ├── README.md                      # Project overview & features
+│   ├── LINKS.md                       # Quick links & resources
+│   ├── DEPLOYMENT.md                  # Detailed deployment guide
+│   ├── LIVE_DEPLOYMENT_GUIDE.md       # Step-by-step quick start
+│   ├── DEPLOYMENT_CONFIG.md           # Configuration reference
+│   ├── DEPLOYMENT_CHECKLIST.json      # Pre-deployment checklist
+│   ├── render.yaml                    # Render infrastructure-as-code
+│   ├── deploy.sh                      # Git setup script
+│   └── deployment-helper.py           # Secret generation tool
+│
+├── 🔧 Backend (FastAPI + SQLAlchemy)
+│   └── backend/
+│       ├── app/                       # Main application
+│       │   ├── main.py               # FastAPI app initialization
+│       │   ├── models/               # Database ORM models
+│       │   │   ├── user.py           # User account model
+│       │   │   ├── application.py    # Job application model
+│       │   │   ├── interview.py      # Interview tracking model
+│       │   │   ├── reminder.py       # Reminder model
+│       │   │   └── resume.py         # Resume storage model
+│       │   ├── api/
+│       │   │   └── routes/           # REST API endpoints
+│       │   │       ├── auth.py       # Register & login endpoints
+│       │   │       ├── applications.py # Job app CRUD + CSV export
+│       │   │       ├── interviews.py # Interview tracking endpoints
+│       │   │       ├── reminders.py  # Reminder management endpoints
+│       │   │       └── resumes.py    # Resume upload endpoints
+│       │   ├── core/                 # Core functionality
+│       │   │   ├── security.py       # JWT & password hashing
+│       │   │   └── config.py         # App configuration
+│       │   └── db/
+│       │       └── database.py       # SQLAlchemy setup & engine
+│       ├── requirements.txt           # Python dependencies
+│       ├── build.sh                  # Render build script
+│       ├── .env.example              # Environment variables template
+│       ├── .renderignore             # Files to ignore on Render
+│       ├── job_tracker.db            # SQLite dev database
+│       ├── test_backend.py           # Backend API tests
+│       └── test_csv_export.py        # CSV export tests
+│
+├── 🎨 Frontend (React + Vite)
+│   └── frontend/
+│       ├── src/
+│       │   ├── App.jsx               # Main React component
+│       │   │                         # (includes auth, CRUD, analytics, dark mode)
+│       │   ├── main.jsx              # React entry point
+│       │   └── styles.css            # Theming & responsive design
+│       ├── public/
+│       │   └── (static assets)
+│       ├── dist/                     # Production build output
+│       ├── node_modules/             # JavaScript dependencies
+│       ├── package.json              # Node dependencies & scripts
+│       ├── package-lock.json         # Locked dependency versions
+│       ├── vite.config.js            # Vite build configuration
+│       ├── vercel.json               # Vercel deployment config
+│       ├── .env.example              # Environment variables template
+│       ├── .vercelignore             # Files to ignore on Vercel
+│       └── index.html                # HTML entry point
+│
+├── 🤖 CI/CD & DevOps
+│   └── .github/
+│       └── workflows/
+│           └── ci.yml                # GitHub Actions pipeline
+│
+└── 📊 Database
+    └── (SQLite locally, PostgreSQL on Render)
+
+VITE_API_BASE=https://your-backend.onrender.com/api
